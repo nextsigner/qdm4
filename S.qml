@@ -18,281 +18,211 @@ Item {
     }
 
     //2
-    //    Row{
-    //        id:x2
-    //        width: r.width-app.fs
-    //        anchors.centerIn: r
-    //        opacity: 0.0
-    //        spacing: app.fs
-    //        Behavior on opacity{NumberAnimation{duration:500}}
-    //        Column{
-    //            spacing: app.fs*0.2
-    //            Text{
-    //                text:'<b>Còdigo QML - Elemento Text{}</b>'
-    //                font.pixelSize: app.fs
-    //                color: app.c2
-    //            }
-    //            Row{
-    //                spacing: app.fs*0.5
-    //                Text{
-    //                    text:'import'
-    //                    font.pixelSize: app.fs
-    //                    color: app.c2
-    //                }
-    //                Text{
-    //                    text:'QtQuick'
-    //                    font.pixelSize: app.fs
-    //                    color: app.c2
-    //                    Marco{id:mm1;padding:app.fs*0.1}
-    //                }
-    //                Text{
-    //                    id:txtVer
-    //                    text:'2.0'
-    //                    font.pixelSize: app.fs
-    //                    color: app.c2
-    //                    Marco{id:mm2;padding:app.fs*0.1}
-    //                }
-    //            }
-    //            Text{
-    //                id:txt1
-    //                text:'Text{'
-    //                font.pixelSize: app.fs
-    //                color: app.c2
-    //            }
-    //            Text{
-    //                id:text100
-    //                font.pixelSize: app.fs
-    //                color: app.c2
-    //                textFormat: Text.PlainText
-    //                Marco{id:mr1;padding:app.fs*0.1}
-    //                Marco{
-    //                    id:me1;padding:app.fs*0.1
-    //                    opacity:0.0
-    //                    Behavior on opacity{NumberAnimation{duration:500}}
-    //                    Text{
-    //                        text:'STRING\nCadena de Texto'
-    //                        font.pixelSize: app.fs*0.5
-    //                        color: app.c2
-    //                        horizontalAlignment: Text.AlignHCenter
-    //                        anchors.left: parent.right
-    //                        anchors.leftMargin: app.fs*0.5
-    //                        anchors.verticalCenter: parent.verticalCenter
-    //                    }
-    //                }
-    //            }
-    //            Text{
-    //                text:'       color:"'+text1.color+'"'
-    //                font.pixelSize: app.fs
-    //                color: app.c2
-    //                Marco{id:mr2;padding:app.fs*0.1}
-    //                Marco{
-    //                    id:me2;padding:app.fs*0.1
-    //                    opacity:0.0
-    //                    Behavior on opacity{NumberAnimation{duration:500}}
-    //                    Text{
-    //                        text:'STRING\nCadena de Texto'
-    //                        font.pixelSize: app.fs*0.5
-    //                        color: app.c2
-    //                        horizontalAlignment: Text.AlignHCenter
-    //                        anchors.left: parent.right
-    //                        anchors.leftMargin: app.fs*0.5
-    //                        anchors.verticalCenter: parent.verticalCenter
-    //                    }
-    //                }
-    //            }
-    //            Text{
-    //                text:'       font.pixelSize:'+parseInt(text1.font.pixelSize)
-    //                font.pixelSize: app.fs
-    //                color: app.c2
-    //                Marco{id:mr3;padding:app.fs*0.1}
-    //                Marco{
-    //                    id:me3;padding:app.fs*0.1
-    //                    opacity:0.0
-    //                    Behavior on opacity{NumberAnimation{duration:500}}
-    //                    Text{
-    //                        text:'NUMERO\nENTERO'
-    //                        font.pixelSize: app.fs*0.5
-    //                        color: app.c2
-    //                        horizontalAlignment: Text.AlignHCenter
-    //                        anchors.left: parent.right
-    //                        anchors.leftMargin: app.fs*0.5
-    //                        anchors.verticalCenter: parent.verticalCenter
-    //                    }
-    //                }
-    //            }
-    //            Text{
-    //                id:text4
-    //                text:'       textFormat:Text.AutoText'
-    //                font.pixelSize: app.fs
-    //                color: app.c2
-    //                height:opacity!==0.0?txt1.height:0
-    //                Behavior on opacity{NumberAnimation{duration:500}}
-    //                Behavior on height{NumberAnimation{duration:500}}
-    //                Marco{id:mr4;padding:app.fs*0.1}
-    //                Marco{
-    //                    id:me4;padding:app.fs*0.1
-    //                    opacity:0.0
-    //                    Behavior on opacity{NumberAnimation{duration:500}}
-    //                    Text{
-    //                        text:'Enumerador\nde Text{}'
-    //                        font.pixelSize: app.fs*0.5
-    //                        color: app.c2
-    //                        horizontalAlignment: Text.AlignHCenter
-    //                        anchors.left: parent.right
-    //                        anchors.leftMargin: app.fs*0.5
-    //                        anchors.verticalCenter: parent.verticalCenter
-    //                    }
-    //                }
-    //            }
-    //            Text{
-    //                id:text6
-    //                text:'       width: '+parseInt(app.fs*5)
-    //                font.pixelSize: app.fs
-    //                color: app.c2
-    //                height:opacity!==0.0?txt1.height:0
-    //                Behavior on opacity{NumberAnimation{duration:500}}
-    //                Behavior on height{NumberAnimation{duration:500}}
-    //                Marco{id:mr6;padding:app.fs*0.1}
-    //                Marco{
-    //                    id:me6;padding:app.fs*0.1
-    //                    opacity:0.0
-    //                    Behavior on opacity{NumberAnimation{duration:500}}
-    //                    Text{
-    //                        text:'NÙMERO\nENTERO'
-    //                        font.pixelSize: app.fs*0.5
-    //                        color: app.c2
-    //                        horizontalAlignment: Text.AlignHCenter
-    //                        anchors.left: parent.right
-    //                        anchors.leftMargin: app.fs*0.5
-    //                        anchors.verticalCenter: parent.verticalCenter
-    //                    }
-    //                }
-    //            }
-    //            Text{
-    //                id:text5
-    //                text:'       wrapMode:Text.WordWrap'
-    //                font.pixelSize: app.fs
-    //                color: app.c2
-    //                height:opacity!==0.0?txt1.height:0
-    //                Behavior on opacity{NumberAnimation{duration:500}}
-    //                Behavior on height{NumberAnimation{duration:500}}
-    //                Marco{id:mr5;padding:app.fs*0.1}
-    //                Marco{
-    //                    id:me5;padding:app.fs*0.1
-    //                    opacity:0.0
-    //                    Behavior on opacity{NumberAnimation{duration:500}}
-    //                    Text{
-    //                        text:'Enumerador\nde Text{}'
-    //                        font.pixelSize: app.fs*0.5
-    //                        color: app.c2
-    //                        horizontalAlignment: Text.AlignHCenter
-    //                        anchors.left: parent.right
-    //                        anchors.leftMargin: app.fs*0.5
-    //                        anchors.verticalCenter: parent.verticalCenter
-    //                    }
-    //                }
-    //            }
-    //            Text{
-    //                text:'}'
-    //                font.pixelSize: app.fs
-    //                color: app.c2
-    //            }
-    //        }
-    //        Xv{
-    //            id:xV4
-    //            tvh:app.fs
-    //            width: app.fs*16
-    //            height: r.height-app.fs*8
-    //            clip:false
-    //            anchors.verticalCenter: parent.verticalCenter
-    //            Text{
-    //                id:text1
-    //                width: app.fs*6
-    //                height: contentHeight
-    //                x:parseInt(app.fs)
-    //                y: parseInt(app.fs)+xV4.tvh
-    //                color: tColors.running?arrcolors[tColors.v]:app.c2
-    //                //text:tText.running?arrtext[tText.v]:text1.e1+'Texto de Ejemplo'+text1.e2
-    //                font.pixelSize: tFontSize.running?arrfs[tFontSize.v]:app.fs
-    //                //textFormat: Text.Normal
-    //                //wrapMode: Text.WrapAnywhere
-    //                property string e1: ''
-    //                property string e2: ''
-    //                property var arrtext:['Texto de Ejemplo','Hola Qml', 'YosoY', 'Eu Gatit', 'Dana y Lito', 'Natalia te amo']
-    //                property var arrcolors:['red', 'pink', '#ff8833', 'green', 'gray']
-    //                property var arrfs:[app.fs*0.6, app.fs*0.3, 8, app.fs*0.8, app.fs*0.5,app.fs*1.5]
-    //                Rectangle{
-    //                    id:mantxt
-    //                    color: 'transparent'
-    //                    border.color: 'red'
-    //                    border.width: 1
-    //                    width: parent.contentWidth
-    //                    height: parent.contentHeight
-    //                    //anchors.centerIn: text1
-    //                    Text{
-    //                        text:'Tamaño\ndel Texto'
-    //                        font.pixelSize: app.fs*0.5
-    //                        color: 'red'
-    //                        horizontalAlignment: Text.AlignHCenter
-    //                        anchors.left: parent.right
-    //                        anchors.leftMargin: app.fs*0.5
-    //                        anchors.verticalCenter: parent.verticalCenter
-    //                    }
-    //                }
-    //                Timer{
-    //                    id:tText
-    //                    running: false
-    //                    repeat: true
-    //                    interval: 2000
-    //                    property int v: 0
-    //                    onTriggered: {
-    //                        if(v<text1.arrtext.length-1){
-    //                            v++
-    //                        }else{
-    //                            v=0
-    //                        }
-    //                    }
-    //                }
-    //                Timer{
-    //                    id:tColors
-    //                    running: false
-    //                    repeat: true
-    //                    interval: 650
-    //                    property int v: 0
-    //                    onTriggered: {
-    //                        if(v<text1.arrcolors.length-1){
-    //                            v++
-    //                        }else{
-    //                            v=0
-    //                        }
-    //                    }
-    //                }
-    //                Timer{
-    //                    id:tFontSize
-    //                    running: false
-    //                    repeat: true
-    //                    interval: 650
-    //                    property int v: 0
-    //                    onTriggered: {
-    //                        if(v<text1.arrfs.length-1){
-    //                            v++
-    //                        }else{
-    //                            v=0
-    //                        }
-    //                    }
-    //                }
-    //            }
-    //        }
-    //    }
-
+    Row{
+        id:x2
+        width: r.width-app.fs
+        anchors.centerIn: r
+        opacity: 0.0
+        spacing: app.fs
+        Behavior on opacity{NumberAnimation{duration:500}}
+        Column{
+            spacing: app.fs*0.2
+            Text{
+                text:'<b>Còdigo QML - Elemento Image{}</b>'
+                font.pixelSize: app.fs
+                color: app.c2
+            }
+            Row{
+                spacing: app.fs*0.5
+                Text{
+                    text:'import'
+                    font.pixelSize: app.fs
+                    color: app.c2
+                }
+                Text{
+                    text:'QtQuick'
+                    font.pixelSize: app.fs
+                    color: app.c2
+                    Marco{id:mm1;padding:app.fs*0.1}
+                }
+                Text{
+                    id:txtVer
+                    text:'2.0'
+                    font.pixelSize: app.fs
+                    color: app.c2
+                    Marco{id:mm2;padding:app.fs*0.1}
+                }
+            }
+            Text{
+                id:txt1
+                text:'Image{'
+                font.pixelSize: app.fs
+                color: app.c2
+            }
+            Text{
+                text:'       source:"nestor.jpg"'
+                font.pixelSize: app.fs
+                color: app.c2
+                Marco{id:mr2;padding:app.fs*0.1}
+                Marco{
+                    id:me2;padding:app.fs*0.1
+                    opacity:0.0
+                    Behavior on opacity{NumberAnimation{duration:500}}
+                    Text{
+                        text:'STRING\nCadena de Texto'
+                        font.pixelSize: app.fs*0.5
+                        color: app.c2
+                        horizontalAlignment: Text.AlignHCenter
+                        anchors.left: parent.right
+                        anchors.leftMargin: app.fs*0.5
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                }
+            }
+            Text{
+                text:'       cache:'+img1.cache
+                font.pixelSize: app.fs
+                color: app.c2
+                Marco{id:mr3;padding:app.fs*0.1}
+                Marco{
+                    id:me3;padding:app.fs*0.1
+                    opacity:0.0
+                    Behavior on opacity{NumberAnimation{duration:500}}
+                    Text{
+                        text:'BOOLEANO\nVERDADERO\nO FALSO'
+                        font.pixelSize: app.fs*0.5
+                        color: app.c2
+                        horizontalAlignment: Text.AlignHCenter
+                        anchors.left: parent.right
+                        anchors.leftMargin: app.fs*0.5
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                }
+            }
+            Text{
+                id:text4
+                text:'       fillMode:Image.Strech'
+                font.pixelSize: app.fs
+                color: app.c2
+                height:txt1.height
+                Marco{id:mr4;padding:app.fs*0.1}
+                Marco{
+                    id:me4;padding:app.fs*0.1
+                    opacity:0.0
+                    Behavior on opacity{NumberAnimation{duration:500}}
+                    Text{
+                        text:'Enumerador\nde Image{}'
+                        font.pixelSize: app.fs*0.5
+                        color: app.c2
+                        horizontalAlignment: Text.AlignHCenter
+                        anchors.left: parent.right
+                        anchors.leftMargin: app.fs*0.5
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                }
+            }
+            Text{
+                text:'}'
+                font.pixelSize: app.fs
+                color: app.c2
+            }
+        }
+        Xv{
+            id:xV4
+            tvh:app.fs
+            width: app.fs*16
+            height: r.height-app.fs*8
+            clip:false
+            anchors.verticalCenter: parent.verticalCenter
+            Image{
+                id:img1
+                width: app.fs*6
+                height: width
+                x:parseInt(app.fs)
+                y: parseInt(app.fs)+xV4.tvh
+                source: 'nestor.png'
+                property string e1: ''
+                property string e2: ''
+                property var arrtext:['Texto de Ejemplo','Hola Qml', 'YosoY', 'Eu Gatit', 'Dana y Lito', 'Natalia te amo']
+                property var arrfs:[app.fs*0.6, app.fs*0.3, 8, app.fs*0.8, app.fs*0.5,app.fs*1.5]
+                Rectangle{
+                    id:mantxt
+                    color: 'transparent'
+                    border.color: 'red'
+                    border.width: 1
+                    width: parent.width
+                    height: parent.height
+                    Text{
+                        text:'Tamaño\nde Image{}'
+                        font.pixelSize: app.fs*0.5
+                        color: 'red'
+                        horizontalAlignment: Text.AlignHCenter
+                        anchors.left: parent.right
+                        anchors.leftMargin: app.fs*0.5
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                }
+                Timer{
+                    id:tText
+                    running: false
+                    repeat: true
+                    interval: 2000
+                    property int v: 0
+                    onTriggered: {
+                        /*if(v<text1.arrtext.length-1){
+                            v++
+                        }else{
+                            v=0
+                        }*/
+                    }
+                }
+            }
+        }
+    }
 
     Timer{
         running: r.visible
         repeat: true
         interval: 250
         onTriggered: {
-            //Longitud de Audio 5:28=328
-            x1.opacity=app.p(0, 6)?1.0:0.0
+            //Longitud de Audio 7:34=454
+            x1.opacity=app.p(0, 4)?1.0:0.0
+            x2.opacity=app.p(4, 454)?1.0:0.0
+             mm1.opacity=app.p(10.5, 15)?1.0:0.0
+             mm2.opacity=app.p(15, 22)?1.0:0.0
+
+            if(app.p(28, 32)){
+                mr2.opacity=1.0
+                mr3.opacity=0.0
+                mr4.opacity=0.0
+            }else if(app.p(32, 35)){
+                mr2.opacity=0.0
+                mr3.opacity=1.0
+                mr4.opacity=0.0
+            }else if(app.p(35, 38)){
+                mr2.opacity=0.0
+                mr3.opacity=0.0
+                mr4.opacity=1.0
+            }else{
+                mr2.opacity=0.0
+                mr3.opacity=0.0
+                mr4.opacity=0.0
+            }
+
+            if(app.p(40, 147)){
+                mr2.opacity=1.0
+                mr3.opacity=0.0
+                mr4.opacity=0.0
+            }else if(app.p(147, 211)){
+                mr2.opacity=0.0
+                mr3.opacity=1.0
+                mr4.opacity=0.0
+            }else if(app.p(211, 366)){
+                mr2.opacity=0.0
+                mr3.opacity=0.0
+                mr4.opacity=1.0
+            }
+
         }
     }
 
@@ -415,13 +345,11 @@ Item {
         }
         return sp
     }
-
     Component.onCompleted: {
-        //controles.asec=[0,10, 21, 28, 44, 71, 97,120, 167,194, 210, 244, 256, 270,300]
-        controles.asec=[0]
+        controles.asec=[0, 5, 40, 99, 147, 211, 366, 414]
         var at=''
         //Pr
-        at+='------Elemento Image'
+        at+='Elemento Image'
         at+=e(50)
         //Req
         at+='Para utilizar este elemento es necesario importar la librerìa QtQuick. Para este curso te recomendamos la versiòn 2.0 '
@@ -453,17 +381,16 @@ El tipo de dato que se requiere para esta propiedad es un cadena de texto, un da
 
 Por ejemplo, si no se especifica la propiedad FILLMODE de un elemento Image{}, por defecto este elemento estarà definido con el enumerador Image.Stretch. Con este enumerador la imagen se mostrarà ajustada a las propiedades WIDTH y HEIGHT, ancho y alto del elemento Image{}. Si estas propiedades que definen el tamaño de la imagen no coinciden con las medidas o proporciones de la imagen, como resultado obtendremos que la misma se puede ver estirada o con un aspecto diferente al original.
 
-Por estas razones, si queremos preservar la relaciòn de aspecto de una imagen podemos utilizar el enumerador Image.PreserveAspectFit que escalarà la imagen ajustandola dentro de el tamaño del elemento Image{} preservando su aspecto sin recortarla. Utilizar el enumerador Image.PreserveAspectCrop preservarà el aspecto original de la imagen sin estirarla pero no se ajustarà plenamente al tamaño del elemento Image{}, dependiendo las dimensiones originales de la imagen cargada, esta se mostrarà cortada.
-
-'
+Por estas razones, si queremos preservar la relaciòn de aspecto de una imagen podemos utilizar el enumerador Image.PreserveAspectFit que escalarà la imagen ajustandola dentro de el tamaño del elemento Image{} preservando su aspecto sin recortarla. Utilizar el enumerador Image.PreserveAspectCrop preservarà el aspecto original de la imagen sin estirarla pero no se ajustarà plenamente al tamaño del elemento Image{}, dependiendo las dimensiones originales de la imagen cargada, esta se mostrarà cortada.'
 
         at+=e(5)
         //PQ
-        at+='Este elemento muestra imagenes de diferentes formatos. Los formatos soportados, es decir, los tipos de archivos que puedes cargar mediante el elemento Image{} son el formato PNG, JPEG, BMP o GIF. Si el sistema operativo cuenta con los codecs de otros formatos de imàgenes, el elemento Image{} los soportarà de manera automàtica.'
+        at+='Este elemento muestra imagenes de diferentes formatos. Los formatos soportados, es decir, los tipos de archivos que puedes cargar mediante el elemento Image{} son el formato PNG, JPEG, BMP o GIF. Si el sistema operativo en el cual estes utilizando el elemento Image{} cuenta con los codecs de otros formatos de imàgenes, el elemento Image{} los soportarà de manera automàtica.'
 
         at+=e(25)
         //Ie
         at+='Puedes realizar una gran cantidad de efectos en la imagen cargada. Para ello es necesario importar el mòdulo QtGraphicalEffects 1.0 para lograr los efectos de Brillo, Contraste, Colorear, Desenfoque entre otros.'
+        at+=e(50)
 
         xT.t.textFormat=Text.PlainText
         xT.at=at.replace(/\n/g, ' ')
