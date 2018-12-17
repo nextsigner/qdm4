@@ -421,7 +421,7 @@ Item {
         controles.asec=[0]
         var at=''
         //Pr
-        at+='Elemento Image'
+        at+='------Elemento Image'
         at+=e(50)
         //Req
         at+='Para utilizar este elemento es necesario importar la librerìa QtQuick. Para este curso te recomendamos la versiòn 2.0 '
@@ -451,27 +451,19 @@ El tipo de dato que se requiere para esta propiedad es un cadena de texto, un da
 
         at+=' La propiedad FILLMODE se utiliza para definir como se rellenarà o se ordenarà la imagen con respeto a su ancho y alto original. Es decir que la imagen se verà estirada, recortada o conservando su aspecto dependiendo de què modo hayamos definido la propiedad FILLMODE.  Esta propiedad para ser modificada se requiera un dato del tipo enumerador de Image{}.
 
-Por ejemplo, si no se especifica la propiedad FILLMODE de una imagen, por defecto estarà definida con el enumerador Image.Stretch. Con este enumerador la imagen la imagen se mostrarà ajustada a las propiedades WIDTH y HEIGHT, ancho y alto. Si esta propiedades que definen el tamaño de la imagen no coinciden con las medidas o proporciones de la imagen, la misma se puede ver estirada o con un aspecto diferente al original.
+Por ejemplo, si no se especifica la propiedad FILLMODE de un elemento Image{}, por defecto este elemento estarà definido con el enumerador Image.Stretch. Con este enumerador la imagen se mostrarà ajustada a las propiedades WIDTH y HEIGHT, ancho y alto del elemento Image{}. Si estas propiedades que definen el tamaño de la imagen no coinciden con las medidas o proporciones de la imagen, como resultado obtendremos que la misma se puede ver estirada o con un aspecto diferente al original.
 
-Por estas razones, si queremos preservar la relaciòn de aspecto de una imagen podemos utilizar el enumerador Image.PreserveAspectFit que escalarà la imagen ajustando la imagen dentro de el tamaño del elemento Image{} preservando su aspecto sin recortarla. Utilizar el enumerador Image.PreserveAspectCrop preservarà el aspecto original de la imagen sin estirarla pero no se ajustarà plenamente al tamaño del elemento Image{}, dependiendo las dimensiones originales de la imagen cargada, esta se mostrarà cortada.
+Por estas razones, si queremos preservar la relaciòn de aspecto de una imagen podemos utilizar el enumerador Image.PreserveAspectFit que escalarà la imagen ajustandola dentro de el tamaño del elemento Image{} preservando su aspecto sin recortarla. Utilizar el enumerador Image.PreserveAspectCrop preservarà el aspecto original de la imagen sin estirarla pero no se ajustarà plenamente al tamaño del elemento Image{}, dependiendo las dimensiones originales de la imagen cargada, esta se mostrarà cortada.
 
 '
 
         at+=e(5)
         //PQ
-        at+='Este elemento nos permite mortrar diferentes tipos de textos dentro de la pantalla de la aplicaciòn. Ademàs de las propiedades principales, contamos otras propiedades que nos permitiràn mostrar el texto con otras caracterìsticas màs avanzadas de diseño. Tengamos en cuenta que por defecto, este elemento Text{} soporta algunos tags o etiquetas html relacionados con el estilo de texto. Por ejemplo para mostrar el texto en negrita podemos utilizar la etiqueta <b>, para mostrar el texto subrayado utilizamos la etiqueta <u> o para mostrar el texto en inclinado utilizamos la etiqueta <i>. '
+        at+='Este elemento muestra imagenes de diferentes formatos. Los formatos soportados, es decir, los tipos de archivos que puedes cargar mediante el elemento Image{} son el formato PNG, JPEG, BMP o GIF. Si el sistema operativo cuenta con los codecs de otros formatos de imàgenes, el elemento Image{} los soportarà de manera automàtica.'
 
         at+=e(25)
         //Ie
-        at+='Si queremos mostrar un texto con un formato que soporte màs etiquetas HTML, debemos definir el valor de la propiedad textFormat asignandole un valor enumerador del elemento Text{} llamado RichText. La propiedad textFormat viene con el valor enumerador AutoText por defecto y tambièn puede ser definido con el valor enumerador PlainText si lo que deseamos es mostrar un texto plano.
-
-    En principio el elemento Text{} se comporta como un texto de una lìnea ùnica, sin ajuste de lìnea, es decir que solo se mostrarà con saltos de lìnea si tiene saltos de linea escritos en la propiedad text.
-
-Para que este elemento tenga un ajuste de lìnea automàtico, debemos definir su propiedad WIDTH y luego debemos definir  la propiedad wrapMode con el enumerador Text.WordWrap para ajustar por palabras o Text.WrapAnywhere para ajustar por caracteres.
-'
-        at+=e(25)
-        //Ie
-        at+='Este elemento Text{} hereda todas las propiedades del elemento Item{}.  Su posiciòn, dimensiones y tipo de visibilidad se define modificando las propiedades heredadas desde el elemento Item{} desde el cual este elemento Text{} fue creado.'
+        at+='Puedes realizar una gran cantidad de efectos en la imagen cargada. Para ello es necesario importar el mòdulo QtGraphicalEffects 1.0 para lograr los efectos de Brillo, Contraste, Colorear, Desenfoque entre otros.'
 
         xT.t.textFormat=Text.PlainText
         xT.at=at.replace(/\n/g, ' ')
