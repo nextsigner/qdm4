@@ -1,4 +1,5 @@
-import QtQuick 2.0
+import QtQuick 2.9
+import QtGraphicalEffects 1.0
 import  "../../../"
 Item {
     id: r
@@ -52,6 +53,15 @@ Item {
                     color: app.c2
                     Marco{id:mm2;padding:app.fs*0.1}
                 }
+            }
+            Text{
+                id:txtGE
+                text:'import QtGraphicalEffects 1.0'
+                font.pixelSize: app.fs
+                color: app.c2
+                Behavior on opacity{NumberAnimation{duration:500}}
+                Behavior on height{NumberAnimation{duration:500}}
+                height: opacity!==0.0?txt1.height:0
             }
             Text{
                 id:txt1
@@ -244,9 +254,62 @@ Item {
                         }
                     }
                 }
+                BrightnessContrast {
+                    id:bc1
+                    anchors.fill: img2
+                    brightness: 0.5
+                    contrast: 0.5
+                    Behavior on brightness{NumberAnimation{duration:500}}
+                    Behavior on contrast{NumberAnimation{duration:500}}
+                }
+
             }
+            FastBlur {
+                id: fb1
+                anchors.fill: img2
+                radius: 32
+            }
+            ShaderEffect {
+                id: se1
+                property variant src//: img2
+
+                property real r: yourColor.r * yourColor.a
+                property real g: yourColor.g * yourColor.a
+                property real b: yourColor.b * yourColor.a
+
+                property color yourColor: "#ff8833"
+                anchors.fill: src?img2:undefined
+                vertexShader: "
+                    uniform highp mat4 qt_Matrix;
+                    attribute highp vec4 qt_Vertex;
+                    attribute highp vec2 qt_MultiTexCoord0;
+                    varying highp vec2 coord;
+
+                    void main() {
+                        coord = qt_MultiTexCoord0;
+                        gl_Position = qt_Matrix * qt_Vertex;
+                    }
+                "
+
+                fragmentShader: "
+                    varying highp vec2 coord;
+                    uniform sampler2D src;
+
+                    uniform lowp float r;
+                    uniform lowp float g;
+                    uniform lowp float b;
+
+                    void main() {
+                        lowp vec4 clr = texture2D(src, coord);
+                        lowp float avg = (clr.r + clr.g + clr.b) / 3.;
+                        gl_FragColor = vec4(r * avg, g * avg, b * avg, clr.a);
+                    }
+                "
+            }
+
         }
     }
+
 
 
     Timer{
@@ -313,7 +376,7 @@ Item {
             }
             tImg.running=app.p(102, 149)
             img1.opacity=app.p(0, 149)?1.0:0.0
-            img2.opacity=app.p(149, 454)?1.0:0.0
+            //img2.opacity=app.p(149, 454)?1.0:0.0
 
             tcacheimg1.running=app.p(147, 211)
             me3.opacity=app.p(167, 60*3+32)?1.0:0.0
@@ -332,14 +395,32 @@ Item {
                 }else{
                     text4.text='       fillMode: Image.PreserveAspectFit'
                 }
-
             }
 
+            txtGE.opacity=app.p(60*6+55, 454)?1.0:0.0
+            bc1.source=app.p(60*6+55, 60*7+23)?img2:undefined
+            bc1.visible=app.p(60*6+55, 60*7+23)
+
+            if(app.p(60*7+12, 60*7+17)){
+                bc1.brightness=0.5
+                bc1.contrast=0.0
+            }else if(app.p(60*7+17, 60*7+22)){
+                bc1.brightness=0.0
+                bc1.contrast=0.5
+            }else if(app.p(60*7+22, 60*7+28)){
+                bc1.brightness=0.0
+                bc1.contrast=0.5
+            }else{
+                bc1.brightness=0.0
+                bc1.contrast=0.0
+            }
+            fb1.source=app.p(60*7+24, 60*7+30)?img2:undefined
+            fb1.visible=app.p(60*7+24, 60*7+30)
+
+            se1.src=app.p(60*7+21, 60*7+24)?img2:undefined
+            se1.visible=app.p(60*7+21, 60*7+24)
         }
     }
-
-
-
     function e(n){
         var sp=''
         for(var i=0;i<n;i++){
