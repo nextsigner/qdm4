@@ -62,6 +62,7 @@ Item {
                 Behavior on opacity{NumberAnimation{duration:500}}
                 Behavior on height{NumberAnimation{duration:500}}
                 height: opacity!==0.0?txt1.height:0
+                Marco{id:mmGE;padding:app.fs*0.1}
             }
             Text{
                 id:txt1
@@ -210,7 +211,7 @@ Item {
                     width: parent.width
                     height: parent.height
                     Text{
-                        text:'Tamaño\nde Image{}\n'+img1.width+'x'+img1.height
+                        text:'Tamaño\nde Image{}\n'+parseInt(img1.width)+'x'+parseInt(img1.height)
                         font.pixelSize: app.fs*0.5
                         color: 'red'
                         horizontalAlignment: Text.AlignHCenter
@@ -253,7 +254,7 @@ Item {
                     width: parent.width
                     height: parent.height
                     Text{
-                        text:'Tamaño\nde Image{}\n'+img2.width+'x'+img2.height
+                        text:'Tamaño\nde Image{}\n'+parseInt(img2.width)+'x'+parseInt(img2.height)
                         font.pixelSize: app.fs*0.5
                         color: 'red'
                         horizontalAlignment: Text.AlignHCenter
@@ -422,6 +423,7 @@ Item {
             }
 
             txtGE.opacity=app.p(60*6+55, 454)?1.0:0.0
+            mmGE.opacity=app.p(60*6+60, 454)?1.0:0.0
             bc1.source=app.p(60*6+55, 60*7+23)?img2:undefined
             bc1.visible=app.p(60*6+55, 60*7+23)
 
