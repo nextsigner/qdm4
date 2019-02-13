@@ -11,7 +11,7 @@ Item {
         id:x1
         opacity: 0.0
         Behavior on opacity{NumberAnimation{duration:500}}
-        text:'<b>Elemento QML</b><br><b>Image{}</b><br><b>Secciòn en construcciòn</b>'
+        text:'<b>Elemento QML</b><br><b>Image{}</b>'
         anchors.centerIn: r
         font.pixelSize: app.fs*2
         color: app.c2
@@ -79,7 +79,9 @@ Item {
                 Text{
                     id: txtSource
                     property string ter: 'source'
-                    text:img1.opacity===1.0?ter+':"'+img1.arrimg[tImg.v]+'"':ter+':"eva.png"'
+                    //property string ext: '<span style="color:red;">png</span>'
+                    property string ext: '.png'
+                    text:img1.opacity===1.0?ter+':"'+img1.arrimg[tImg.v]+'"':ter+':"eva'+ext+'"'
                     font.pixelSize: app.fs
                     color: app.c2
                     textFormat: Text.RichText
@@ -159,6 +161,26 @@ Item {
                 }
             }
             Text{
+                id:txtAncho
+                text:'       width: '+parseInt(img2.width)
+                font.pixelSize: app.fs
+                color: app.c2
+                Behavior on opacity{NumberAnimation{duration:500}}
+                Behavior on height{NumberAnimation{duration:500}}
+                height: opacity!==0.0?txt1.height:0
+                opacity: 0.0
+            }
+            Text{
+                id:txtAlto
+                text:'       height: '+parseInt(img2.height)
+                font.pixelSize: app.fs
+                color: app.c2
+                Behavior on opacity{NumberAnimation{duration:500}}
+                Behavior on height{NumberAnimation{duration:500}}
+                height: opacity!==0.0?txt1.height:0
+                opacity: 0.0
+            }
+            Text{
                 text:'}'
                 font.pixelSize: app.fs
                 color: app.c2
@@ -188,7 +210,7 @@ Item {
                     width: parent.width
                     height: parent.height
                     Text{
-                        text:'Tamaño\nde Image{}'
+                        text:'Tamaño\nde Image{}\n'+img1.width+'x'+img1.height
                         font.pixelSize: app.fs*0.5
                         color: 'red'
                         horizontalAlignment: Text.AlignHCenter
@@ -231,7 +253,7 @@ Item {
                     width: parent.width
                     height: parent.height
                     Text{
-                        text:'Tamaño\nde Image{}'
+                        text:'Tamaño\nde Image{}\n'+img2.width+'x'+img2.height
                         font.pixelSize: app.fs*0.5
                         color: 'red'
                         horizontalAlignment: Text.AlignHCenter
@@ -376,7 +398,9 @@ Item {
             }
             tImg.running=app.p(102, 149)
             img1.opacity=app.p(0, 149)?1.0:0.0
-            //img2.opacity=app.p(149, 454)?1.0:0.0
+            img2.opacity=app.p(149, 454)?1.0:0.0
+            txtAncho.opacity=app.p(258, 366)?1.0:0.0
+            txtAlto.opacity=app.p(258, 366)?1.0:0.0
 
             tcacheimg1.running=app.p(147, 211)
             me3.opacity=app.p(167, 60*3+32)?1.0:0.0
@@ -419,6 +443,22 @@ Item {
 
             se1.src=app.p(60*7+21, 60*7+24)?img2:undefined
             se1.visible=app.p(60*7+21, 60*7+24)
+
+            if(app.p(60*6+27, 60*6+30)){
+                txtSource.ext='<b style="color:red">.png</b>'
+                mr2.opacity=1.0
+            }else if(app.p(60*6+30, 60*6+32)){
+                txtSource.ext='<b style="color:red">.jpg</b>'
+                mr2.opacity=1.0
+            }else if(app.p(60*6+32, 60*6+34)){
+                txtSource.ext='<b style="color:red">.bmp</b>'
+                mr2.opacity=1.0
+            }else if(app.p(60*6+34, 60*6+36)){
+                txtSource.ext='<b style="color:red">.gif</b>'
+                mr2.opacity=1.0
+            }else{
+                txtSource.ext='.png'
+            }
         }
     }
     function e(n){
